@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Basic Page Info -->
+	<meta charset="utf-8">
+	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
+
+	<!-- Site favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="vendors/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="vendors/images/favicon-16x16.png">
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
+	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="src/plugins/cropperjs/dist/cropper.css">
+	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
+	<!-- Bootstrap CSS -->
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+	<link href="css/tiny-slider.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+	<title>KivRyelle Store</title>
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-119386393-1');
+	</script>
+</head>
+
+
+
+<body>
+	<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
+
+		<div class="container">
+			<a class="navbar-brand" href="index.html">KivRyelle<span>.</span></a>
+
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarsFurni">
+				<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+					<li class="nav-item ">
+						<a class="nav-link" href="index.html">Home</a>
+					</li>
+					<li><a class="nav-link" href="shop.html">Shop</a></li>
+					<li><a class="nav-link" href="about.html">About us</a></li>
+					<li><a class="nav-link" href="services.html">Services</a></li>
+					<li><a class="nav-link" href="blog.html">Blog</a></li>
+					<li><a class="nav-link" href="contact.html">Contact us</a></li>
+				</ul>
+
+				<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
+					<li><a class="nav-link" href="profile.html"><img src="images/user.svg"></a></li>
+					<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
+				</ul>
+			</div>
+		</div>
+			
+	</nav>
+
+	<br>
+
+	<div class="mobile-menu-overlay"></div>
+
+	<div class="container">
+		<div class="page-header">
+			<div class="col-md-12 col-sm-12 d-flex justify-content-between align-items-center">
+				<div class="row">
+					<div class="title">
+						<h4>Profile</h4>
+					</div>
+					<nav aria-label="breadcrumb" role="navigation">
+						<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="index.html">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Profile</li>
+						</ol>
+					</nav>
+				</div>
+				<div>
+					<a href="dashboard.html" class="btn btn-primary">Dashboard</a>
+				</div>
+			</div>
+		</div>
+	
+				<div class="row">
+					<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 mb-30">
+						<div class="pd-20 card-box height-100-p">
+							<div class="profile-photo">
+								<a href="modal" data-toggle="modal" data-target="#modal" class="edit-avatar"><i class="fa fa-pencil"></i></a>
+								<img src="vendors/images/photo1.jpg" alt="" class="avatar-photo">
+								<div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered" role="document">
+										<div class="modal-content">
+											<div class="modal-body pd-5">
+												<div class="img-container">
+													<img id="image" src="vendors/images/photo2.jpg" alt="Picture">
+												</div>
+											</div>
+											<div class="modal-footer">
+												<input type="submit" value="Update" class="btn btn-primary">
+												<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<h5 class="text-center h5 mb-0">Nama Customer</h5>
+							<br>
+							<div class="profile-info">
+								<h5 class="mb-20 h5 text-blue">Contact Information</h5>
+								<ul>
+									<li>
+										<span>Email Address:</span>
+										keepreal@test.com
+									</li>
+									<li>
+										<span>Phone Number:</span>
+										619-229-0054
+									</li>
+									
+								</ul>
+							</div>
+							
+							
+						</div>
+					</div>
+					<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 mb-30">
+						<div class="card-box height-100-p overflow-hidden">
+							<div class="profile-tab height-100-p">
+								<div class="tab height-100-p">
+									<ul class="nav nav-tabs customtab" role="tablist">
+										<li class="nav-item">
+											<a class="nav-link active" data-toggle="tab" href="#riwayat" role="tab">Riwayat</a>
+										</li>
+										<li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#pesanan" role="tab">Status Pesanan</a>
+										</li>
+										<!-- <li class="nav-item">
+											<a class="nav-link" data-toggle="tab" href="#setting" role="tab">Settings</a>
+										</li> -->
+									</ul>
+									<div class="tab-content">
+										<!-- riwayat Tab start -->
+										<div class="tab-pane fade show active" id="riwayat" role="tabpanel">
+											<div class="pd-20">
+										
+												<!-- Riwayat Produk -->
+												<div class="riwayat-list mt-3">
+													<!-- Item Produk Riwayat -->
+													<div class="card mb-3">
+														<div class="card-body">
+															<div class="row align-items-center">
+																<!-- Foto Produk -->
+																<div class="col-md-2">
+																	<img src="images/produk1png.png" alt="Foto Produk" class="img-fluid">
+																</div>
+										
+																<!-- Detail Produk -->
+																<div class="col-md-10">
+																	<h6>(Nama Produk)</h6>
+																	<div class="row">
+																		<div class="col-md-4">
+																			<p><strong>Qty:</strong> 2</p>
+																			<p><strong>Harga:</strong> $150.00</p>
+																		</div>
+																		<div class="col-md-4">
+																			<p><strong>Tanggal Pemesanan:</strong><br> 1 November 2024</p>
+																			<p><strong>Tanggal Diterima:</strong><br> 5 November 2024</p>
+																		</div>
+																		<div class="col-md-4">
+																			<p><strong>Alamat:</strong> Jl. Contoh Alamat, Kota, Provinsi</p>
+																			<p><strong>Pembayaran:</strong> Transfer Bank</p>
+																			<p><strong>Waktu Pembayaran:</strong><br> 1 November 2024, 14:00</p>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="card mb-3">
+														<div class="card-body">
+															<div class="row align-items-center">
+																<!-- Foto Produk -->
+																<div class="col-md-2">
+																	<img src="images/produk1png.png" alt="Foto Produk" class="img-fluid">
+																</div>
+										
+																<!-- Detail Produk -->
+																<div class="col-md-10">
+																	<h6>(Nama Produk)</h6>
+																	<div class="row">
+																		<div class="col-md-4">
+																			<p><strong>Qty:</strong> 2</p>
+																			<p><strong>Harga:</strong> $150.00</p>
+																		</div>
+																		<div class="col-md-4">
+																			<p><strong>Tanggal Pemesanan:</strong><br> 1 November 2024</p>
+																			<p><strong>Tanggal Diterima:</strong><br> 5 November 2024</p>
+																		</div>
+																		<div class="col-md-4">
+																			<p><strong>Alamat:</strong> Jl. Contoh Alamat, Kota, Provinsi</p>
+																			<p><strong>Pembayaran:</strong> Transfer Bank</p>
+																			<p><strong>Waktu Pembayaran:</strong><br> 1 November 2024, 14:00</p>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+										
+													<!-- Tambahkan item produk riwayat lainnya sesuai kebutuhan -->
+										
+												</div>
+											</div>
+										</div>
+										
+										<!-- Timeline Tab End -->
+
+										<!-- pesanan Tab start -->
+										<div class="tab-pane fade" id="pesanan" role="tabpanel">
+											<div class="pd-20 profile-task-wrap">
+												<!-- Judul Status Pesanan -->
+												<h5>Detail Pesanan</h5>
+										
+												<!-- Daftar Produk dalam Pesanan -->
+												<div id="order-products" class="mb-4">
+													<!-- Produk akan ditampilkan di sini melalui JavaScript -->
+												</div>
+										
+												<!-- Detail Pesanan -->
+												<div class="order-details">
+													<p><strong>Total Harga:</strong> <span id="total-amount"></span></p>
+													<p><strong>Status Pesanan:</strong> <span id="order-status"></span></p>
+													<p><strong>Tanggal Pemesanan:</strong> <span id="order-date"></span></p>
+													<p><strong>Tanggal Diterima:</strong> <span id="delivery-date"></span></p>
+													<p><strong>Alamat Pengiriman:</strong>
+														<span id="shipping-address"></span>
+													</p>
+													<p><strong>Metode Pembayaran:</strong> <span id="payment-method"></span></p>
+													<p><strong>Waktu Pembayaran:</strong> <span id="payment-date"></span></p>
+													<p><strong>Jumlah Pembayaran:</strong> <span id="payment-amount"></span></p>
+												</div>
+										
+												<!-- Tombol Selesai, hanya tampil jika status adalah "delivered" -->
+												<button id="complete-order-button" class="btn btn-success mt-3" style="display: none;" onclick="markOrderComplete()">
+													Selesai
+												</button>
+											</div>
+										</div>
+										
+										<script>
+											// Contoh data pesanan yang diterima dari backend
+											const orderData = {
+												products: [
+													{
+														productId: "605c72ef5bdf4c2a6432b0f7",
+														quantity: 2,
+														price: 150.00,
+														name: "Smartphone XYZ",
+														imageUrl: "images/produk1png.png"
+													},
+													{
+														productId: "605c72ef5bdf4c2a6432b0f8",
+														quantity: 1,
+														price: 250.00,
+														name: "Laptop ABC",
+														imageUrl: "images/produk1png.png"
+													}
+												],
+												totalAmount: 550.00,
+												orderStatus: "delivered", // Status pesanan
+												orderDate: "2024-11-01T14:30:00Z",
+												deliveryDate: "2024-11-05T10:00:00Z",
+												shippingAddress: {
+													street: "Jl. Contoh Alamat",
+													city: "Kota ABC",
+													state: "Provinsi XYZ",
+													postalCode: "12345"
+												},
+												payment: {
+													amount: 550.00,
+													paymentMethod: "bank transfer",
+													paymentDate: "2024-11-01T15:00:00Z"
+												}
+											};
+										
+											// Fungsi untuk menampilkan data pesanan
+											function displayOrderDetails(order) {
+												// Menampilkan produk dalam pesanan
+												const orderProductsContainer = document.getElementById("order-products");
+												orderProductsContainer.innerHTML = "";
+												order.products.forEach(product => {
+													orderProductsContainer.innerHTML += `
+														<div class="card mb-2">
+															<div class="card-body">
+																<div class="row align-items-center">
+																	<div class="col-md-2">
+																		<img src="${product.imageUrl}" alt="${product.name}" class="img-fluid">
+																	</div>
+																	<div class="col-md-10">
+																		<h6>${product.name}</h6>
+																		<p><strong>Qty:</strong> ${product.quantity}</p>
+																		<p><strong>Price:</strong> $${product.price.toFixed(2)}</p>
+																	</div>
+																</div>
+															</div>
+														</div>
+													`;
+												});
+										
+												// Menampilkan detail lainnya
+												document.getElementById("total-amount").textContent = `$${order.totalAmount.toFixed(2)}`;
+												document.getElementById("order-status").textContent = formatOrderStatus(order.orderStatus);
+												document.getElementById("order-date").textContent = formatDate(order.orderDate);
+												document.getElementById("delivery-date").textContent = formatDate(order.deliveryDate);
+												document.getElementById("shipping-address").textContent = `${order.shippingAddress.street}, ${order.shippingAddress.city}, ${order.shippingAddress.state}, ${order.shippingAddress.postalCode}`;
+												document.getElementById("payment-method").textContent = order.payment.paymentMethod;
+												document.getElementById("payment-date").textContent = formatDate(order.payment.paymentDate);
+												document.getElementById("payment-amount").textContent = `$${order.payment.amount.toFixed(2)}`;
+										
+												// Menampilkan tombol "Selesai" jika pesanan sudah diterima (status "delivered")
+												if (order.orderStatus === "delivered") {
+													document.getElementById("complete-order-button").style.display = "block";
+												}
+											}
+										
+											// Fungsi untuk mengubah status pesanan ke format yang lebih baik (misalnya dari "pending" menjadi "Pending")
+											function formatOrderStatus(status) {
+												return status.charAt(0).toUpperCase() + status.slice(1);
+											}
+										
+											// Fungsi untuk memformat tanggal ke format yang lebih mudah dibaca
+											function formatDate(dateString) {
+												const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+												return new Date(dateString).toLocaleDateString("id-ID", options);
+											}
+										
+											// Fungsi untuk menandai pesanan selesai
+											function markOrderComplete() {
+												alert("Pesanan selesai. Terima kasih!");
+												// Tambahkan logika backend untuk memperbarui status pesanan di sini
+											}
+										
+											// Panggil fungsi untuk menampilkan detail pesanan
+											displayOrderDetails(orderData);
+										</script>
+										
+
+										<!-- Setting Tab start -->
+										<!-- <div class="tab-pane fade height-100-p" id="setting" role="tabpanel">
+											<div class="profile-setting">
+												
+											</div>
+										</div> -->
+										<!-- Setting Tab End -->
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			<div class="footer-wrap pd-20 mb-20 card-box">
+				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
+			</div>
+	</div>
+	<!-- js -->
+	<script src="vendors/scripts/core.js"></script>
+	<script src="vendors/scripts/script.min.js"></script>
+	<script src="vendors/scripts/process.js"></script>
+	<script src="vendors/scripts/layout-settings.js"></script>
+	<script src="src/plugins/cropperjs/dist/cropper.js"></script>
+	<script>
+		window.addEventListener('DOMContentLoaded', function () {
+			var image = document.getElementById('image');
+			var cropBoxData;
+			var canvasData;
+			var cropper;
+
+			$('#modal').on('shown.bs.modal', function () {
+				cropper = new Cropper(image, {
+					autoCropArea: 0.5,
+					dragMode: 'move',
+					aspectRatio: 3 / 3,
+					restore: false,
+					guides: false,
+					center: false,
+					highlight: false,
+					cropBoxMovable: false,
+					cropBoxResizable: false,
+					toggleDragModeOnDblclick: false,
+					ready: function () {
+						cropper.setCropBoxData(cropBoxData).setCanvasData(canvasData);
+					}
+				});
+			}).on('hidden.bs.modal', function () {
+				cropBoxData = cropper.getCropBoxData();
+				canvasData = cropper.getCanvasData();
+				cropper.destroy();
+			});
+		});
+	</script>
+</body>
+</html>
