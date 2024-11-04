@@ -719,3 +719,32 @@ textarea {
   font-size: 14px;
 }
 
+.comment-date {
+  font-size: 14px;
+  color: #888;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.rating .fa {
+  color: #FFD700; /* Warna bintang (emas) */
+  font-size: 16px;
+}
+
+.rating .fa.checked {
+  color: #FFD700;
+}
+
+.rating .fa:not(.checked) {
+  color: #ddd;
+}
+
+/*  */
+.rating_sum {
+  font-size: 90px; /* Ubah ukuran font sesuai kebutuhan */
+}
+
+.rating_sum .fa {
+  font-size: 90px; /* Ukuran ikon bintang */
+  color: #FFD700; /* Warna bintang (emas) */
+}
