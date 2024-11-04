@@ -224,17 +224,20 @@ a {
       text-decoration: none; }
     .product-section .product-item .icon-cross {
       position: absolute;
-      width: 35px;
-      height: 35px;
-      display: inline-block;
+      padding: 5px 10px; /* Memberikan ruang sekitar teks */
+      /* width: 35px;
+      height: 35px; */
+      /* display: inline-block; */
       background: #2f2f2f;
+      color: #fff;
+      font-size: 14px;
       bottom: 15px;
       left: 50%;
       -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
       transform: translateX(-50%);
       margin-bottom: -17.5px;
-      border-radius: 50%;
+      border-radius: 20%;
       opacity: 0;
       visibility: hidden;
       -webkit-transition: .3s all ease;
@@ -709,3 +712,10 @@ textarea {
     height: 50px;
     border-radius: 50%;
     background: rgba(59, 93, 80, 0.2); }
+  
+.small-select {
+  width: 150px;  /* Ubah sesuai keinginan */
+  padding: 4px 8px;
+  font-size: 14px;
+}
+
