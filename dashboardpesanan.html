@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Basic Page Info -->
+	<meta charset="utf-8">
+	<title>Dashboard KivRyelle</title>
+
+	<!-- Site favicon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="vendors/images/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="vendors/images/favicon-16x16.png">
+
+	<!-- Mobile Specific Metas -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<!-- Google Font -->
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
+	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
+	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
+
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'UA-119386393-1');
+	</script>
+    <style> .custom-btn { padding: 0.15rem 0.5rem; /* Adjust padding */ font-size: 0.6rem; /* Adjust font size */ } </style>
+    <style> .modal-content { padding: 20px; } .product-image { width: 100px; /* Atur lebar gambar */ height: auto; /* Pastikan rasio tetap */ } </style>
+</head>
+<body>
+
+	<div class="header">
+		<div class="header-left">
+			<div class="menu-icon dw dw-menu"></div>
+			<div class="search-toggle-icon dw dw-search2" data-toggle="header_search"></div>
+			<div class="header-search">
+				<form>
+					<div class="form-group mb-0">
+						<i class="dw dw-search2 search-icon"></i>
+						<input type="text" class="form-control search-input" placeholder="Search Here">
+						<!-- <div class="dropdown">
+							<a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
+								<i class="ion-arrow-down-c"></i>
+							</a>
+							<div class="dropdown-menu dropdown-menu-right">
+								<div class="form-group row">
+									<label class="col-sm-12 col-md-2 col-form-label">From</label>
+									<div class="col-sm-12 col-md-10">
+										<input class="form-control form-control-sm form-control-line" type="text">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-12 col-md-2 col-form-label">To</label>
+									<div class="col-sm-12 col-md-10">
+										<input class="form-control form-control-sm form-control-line" type="text">
+									</div>
+								</div>
+								<div class="form-group row">
+									<label class="col-sm-12 col-md-2 col-form-label">Subject</label>
+									<div class="col-sm-12 col-md-10">
+										<input class="form-control form-control-sm form-control-line" type="text">
+									</div>
+								</div>
+								<div class="text-right">
+									<button class="btn btn-primary">Search</button>
+								</div>
+							</div>
+						</div> -->
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="header-right">
+			
+			<div class="user-info-dropdown">
+				<div class="dropdown">
+					<a class="dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+						<span class="user-icon">
+							<img src="vendors/images/photo1.jpg" alt="">
+						</span>
+						<span class="user-name">Ross C. Lopez</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+						<a class="dropdown-item" href="profile.html"><i class="dw dw-user1"></i> Profile</a>
+						<a class="dropdown-item" href="login.html"><i class="dw dw-logout"></i> Log Out</a>
+					</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+
+	<div class="left-side-bar">
+		<div class="brand-logo">
+			<a href="index.html">
+				<!-- <img src="vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+				  -->
+				<h1 style="color: white;"><span>Dashboard</span></h1>
+			</a>
+			<div class="close-sidebar" data-toggle="left-sidebar-close">
+				<i class="ion-close-round"></i>
+			</div>
+		</div>
+		<div class="menu-block customscroll">
+			<div class="sidebar-menu">
+				<ul id="accordion-menu">
+					<li>
+						<a href="dashboard.html" class="dropdown-toggle">
+							<span class="micon dw dw-house-1"></span><span class="mtext">Home</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="dashboardproduct.html" class="dropdown-toggle">
+							<span class="micon dw dw-library"></span><span class="mtext">Product</span>
+						</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle">
+							<span class="micon dw dw-edit2"></span><span class="mtext">Pesanan</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="mobile-menu-overlay"></div>
+
+	<div class="main-container">
+		<div class="pd-ltr-20">
+			<div class="card-box mb-30">
+				<h2 class="h4 pd-20">Riwayat Seluruh Pembelian</h2>
+				<table class="data-table table nowrap">
+					<thead>
+						<tr>
+							<th>User</th>
+							<th>Product</th>
+							<th>Quantity</th>
+							<th>Price</th>
+							<th>Total Amount</th>
+							<th>Order Status</th>
+							<th>Order Date</th>
+							<th>Shipping Address</th>
+							<th>Payment Status</th>
+							<th>Action</th>
+						</tr>
+					</thead>
+					<tbody id="purchase-history-body">
+						<!-- Data will be populated dynamically with JavaScript -->
+					</tbody>
+				</table>
+			</div>
+	
+			<!-- User Details Modal -->
+			<div class="modal" id="userModal" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">User Details</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body" id="user-details">
+							<!-- User details will be displayed here -->
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Product Details Modal -->
+			<div class="modal" id="productModal" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Product Details</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body" id="product-details">
+							<!-- Product details will be displayed here -->
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<!-- Shipping Address Modal -->
+			<div class="modal" id="shippingModal" tabindex="-1" role="dialog">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title">Shipping Address</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<div class="modal-body" id="shipping-address">
+							<!-- Shipping address will be displayed here -->
+						</div>
+					</div>
+				</div>
+			</div>
+	
+			<div class="footer-wrap pd-20 mb-20 card-box">
+				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
+			</div>
+		</div>
+	</div>
+		<!-- js -->
+		<script src="vendors/scripts/core.js"></script>
+		<script src="vendors/scripts/script.min.js"></script>
+		<script src="vendors/scripts/process.js"></script>
+		<script src="vendors/scripts/layout-settings.js"></script>
+		<script src="src/plugins/apexcharts/apexcharts.min.js"></script>
+		<script src="src/plugins/datatables/js/jquery.dataTables.min.js"></script>
+		<script src="src/plugins/datatables/js/dataTables.bootstrap4.min.js"></script>
+		<script src="src/plugins/datatables/js/dataTables.responsive.min.js"></script>
+		<script src="src/plugins/datatables/js/responsive.bootstrap4.min.js"></script>
+		<script src="vendors/scripts/dashboard.js"></script>
+
+	</body>
+	</html>
+	
+	<script>
+		// Sample purchase history data with expanded fields
+		const purchaseHistory = [
+			{
+				_id: "trx1001",
+				userId: "1",
+				username: "JohnDoe",
+				products: [
+					{ productId: "p1", name: "Shirt", quantity: 2, price: 100 }
+				],
+				totalAmount: 200,
+				orderStatus: "pending",
+				orderDate: "2023-10-05",
+				shippingAddress: {
+					street: "123 Main St",
+					city: "Los Angeles",
+					state: "CA",
+					postalCode: "90001"
+				},
+				payment: {
+					amount: 200,
+					paymentMethod: "credit card",
+					paymentDate: "2023-10-05",
+					paymentStatus: "successful"
+				}
+			}
+		];
+	
+		const tableBody = document.getElementById("purchase-history-body");
+	
+		purchaseHistory.forEach((purchase, index) => {
+			const row = document.createElement("tr");
+	
+			// User column
+			const userCell = document.createElement("td");
+			userCell.innerHTML = `<a href="#" onclick="showUserDetails(${index})">${purchase.username}</a>`;
+			row.appendChild(userCell);
+	
+			// Product column
+			const productCell = document.createElement("td");
+			productCell.innerHTML = `<a href="#" onclick="showProductDetails(${index})">${purchase.products[0].name}</a>`;
+			row.appendChild(productCell);
+	
+			// Quantity column
+			const quantityCell = document.createElement("td");
+			quantityCell.textContent = purchase.products[0].quantity;
+			row.appendChild(quantityCell);
+	
+			// Price column
+			const priceCell = document.createElement("td");
+			priceCell.textContent = `$${purchase.products[0].price}`;
+			row.appendChild(priceCell);
+	
+			// Total Amount column
+			const totalCell = document.createElement("td");
+			totalCell.textContent = `$${purchase.totalAmount}`;
+			row.appendChild(totalCell);
+	
+			// Order Status column
+			const statusCell = document.createElement("td");
+			statusCell.textContent = purchase.orderStatus;
+			row.appendChild(statusCell);
+	
+			// Order Date column
+			const orderDateCell = document.createElement("td");
+			orderDateCell.textContent = purchase.orderDate;
+			row.appendChild(orderDateCell);
+	
+			// Shipping Address column
+			const addressCell = document.createElement("td");
+			addressCell.innerHTML = `<a href="#" onclick="showShippingAddress(${index})">View Address</a>`;
+			row.appendChild(addressCell);
+	
+			// Payment Status column
+			const paymentStatusCell = document.createElement("td");
+			paymentStatusCell.textContent = purchase.payment.paymentStatus;
+			row.appendChild(paymentStatusCell);
+	
+			// Action column with Update Status button
+			const actionCell = document.createElement("td");
+			actionCell.innerHTML = `<button onclick="updateOrderStatus(${index})">Update Status</button>`;
+			row.appendChild(actionCell);
+	
+			tableBody.appendChild(row);
+		});
+	
+		function updateOrderStatus(index) {
+			const statusOrder = ["pending", "shipping", "delivered"];
+			let currentIndex = statusOrder.indexOf(purchaseHistory[index].orderStatus);
+			if (currentIndex < statusOrder.length - 1) {
+				purchaseHistory[index].orderStatus = statusOrder[currentIndex + 1];
+				alert(`Order status updated to ${purchaseHistory[index].orderStatus}`);
+				location.reload(); // To reflect the updated status in the table
+			} else {
+				alert("Order is already delivered.");
+			}
+		}
+	
+		function showUserDetails(index) {
+			const user = purchaseHistory[index];
+			const userDetails = document.getElementById("user-details");
+			userDetails.innerHTML = `
+				<p>Username: ${user.username}</p>
+				<p>User ID: ${user.userId}</p>
+			`;
+			$('#userModal').modal('show');
+		}
+	
+		function showProductDetails(index) {
+			const product = purchaseHistory[index].products[0];
+			const productDetails = document.getElementById("product-details");
+			productDetails.innerHTML = `
+				<p>Product Name: ${product.name}</p>
+				<p>Quantity: ${product.quantity}</p>
+				<p>Price: $${product.price}</p>
+			`;
+			$('#productModal').modal('show');
+		}
+	
+		function showShippingAddress(index) {
+			const address = purchaseHistory[index].shippingAddress;
+			const shippingDetails = document.getElementById("shipping-address");
+			shippingDetails.innerHTML = `
+				<p>Street: ${address.street}</p>
+				<p>City: ${address.city}</p>
+				<p>State: ${address.state}</p>
+				<p>Postal Code: ${address.postalCode}</p>
+			`;
+			$('#shippingModal').modal('show');
+		}
+	</script>
+	
