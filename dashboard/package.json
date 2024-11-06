@@ -40,6 +40,7 @@
     "streamqueue": "^1.1.1"
   },
   "dependencies": {
+    "deskapp": "file:",
     "gulp-csso": "^4.0.1",
     "gulp-install": "^1.1.0",
     "install": "^0.12.1",

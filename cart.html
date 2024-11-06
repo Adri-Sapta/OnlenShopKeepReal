@@ -74,134 +74,76 @@
 		
 
 		<div class="untree_co-section before-footer-section">
-            <div class="container">
-              <div class="row mb-5">
-                <form class="col-md-12" method="post">
-                  <div class="site-blocks-table">
-                    <table class="table">
-                      <thead>
-                        <tr>
-                          <th class="product-thumbnail">Image</th>
-                          <th class="product-name">Product</th>
-                          <th class="product-price">Price</th>
-                          <th class="product-quantity">Quantity</th>
-                          <th class="product-total">Total</th>
-                          <th class="product-remove">Remove</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td class="product-thumbnail">
-                            <img src="images/product-1.png" alt="Image" class="img-fluid">
-                          </td>
-                          <td class="product-name">
-                            <h2 class="h5 text-black">Product 1</h2>
-                          </td>
-                          <td>$49.00</td>
-                          <td>
-                            <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
-                              <div class="input-group-prepend">
-                                <button class="btn btn-outline-black decrease" type="button">&minus;</button>
-                              </div>
-                              <input type="text" class="form-control text-center quantity-amount" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                              <div class="input-group-append">
-                                <button class="btn btn-outline-black increase" type="button">&plus;</button>
-                              </div>
-                            </div>
-        
-                          </td>
-                          <td>$49.00</td>
-                          <td><a href="#" class="btn btn-black btn-sm">X</a></td>
-                        </tr>
-        
-                        <tr>
-                          <td class="product-thumbnail">
-                            <img src="images/product-2.png" alt="Image" class="img-fluid">
-                          </td>
-                          <td class="product-name">
-                            <h2 class="h5 text-black">Product 2</h2>
-                          </td>
-                          <td>$49.00</td>
-                          <td>
-                            <div class="input-group mb-3 d-flex align-items-center quantity-container" style="max-width: 120px;">
-                              <div class="input-group-prepend">
-                                <button class="btn btn-outline-black decrease" type="button">&minus;</button>
-                              </div>
-                              <input type="text" class="form-control text-center quantity-amount" value="1" placeholder="" aria-label="Example text with button addon" aria-describedby="button-addon1">
-                              <div class="input-group-append">
-                                <button class="btn btn-outline-black increase" type="button">&plus;</button>
-                              </div>
-                            </div>
-        
-                          </td>
-                          <td>$49.00</td>
-                          <td><a href="#" class="btn btn-black btn-sm">X</a></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </form>
-              </div>
-        
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="row mb-5">
-                    <div class="col-md-6 mb-3 mb-md-0">
-                      <button class="btn btn-black btn-sm btn-block">Update Cart</button>
-                    </div>
-                    <div class="col-md-6">
-                      <button class="btn btn-outline-black btn-sm btn-block">Continue Shopping</button>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-12">
-                      <label class="text-black h4" for="coupon">Coupon</label>
-                      <p>Enter your coupon code if you have one.</p>
-                    </div>
-                    <div class="col-md-8 mb-3 mb-md-0">
-                      <input type="text" class="form-control py-3" id="coupon" placeholder="Coupon Code">
-                    </div>
-                    <div class="col-md-4">
-                      <button class="btn btn-black">Apply Coupon</button>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 pl-5">
-                  <div class="row justify-content-end">
-                    <div class="col-md-7">
-                      <div class="row">
-                        <div class="col-md-12 text-right border-bottom mb-5">
-                          <h3 class="text-black h4 text-uppercase">Cart Totals</h3>
-                        </div>
-                      </div>
-                      <div class="row mb-3">
-                        <div class="col-md-6">
-                          <span class="text-black">Subtotal</span>
-                        </div>
-                        <div class="col-md-6 text-right">
-                          <strong class="text-black">$230.00</strong>
-                        </div>
-                      </div>
-                      <div class="row mb-5">
-                        <div class="col-md-6">
-                          <span class="text-black">Total</span>
-                        </div>
-                        <div class="col-md-6 text-right">
-                          <strong class="text-black">$230.00</strong>
-                        </div>
-                      </div>
-        
-                      <div class="row">
-                        <div class="col-md-12">
-                          <button class="btn btn-black btn-lg py-3 btn-block" onclick="window.location='checkout.html'">Proceed To Checkout</button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+			<div class="container">
+				<div class="row mb-5">
+					<form class="col-md-12" method="post">
+						<div class="site-blocks-table">
+							<table class="table">
+								<thead>
+									<tr>
+										<th class="product-thumbnail">Image</th>
+										<th class="product-name">Product</th>
+										<th class="product-price">Price</th>
+										<th class="product-quantity">Quantity</th>
+										<th class="product-total">Total</th>
+										<th class="product-remove">Remove</th>
+									</tr>
+								</thead>
+								<tbody id="cart-items">
+									<!-- Cart items will be injected here by JavaScript -->
+								</tbody>
+							</table>
+						</div>
+					</form>
+				</div>
+		
+				<div class="row">
+					<div class="col-md-6">
+						<div class="row mb-5">
+							<div class="col-md-6 mb-3 mb-md-0">
+								<button class="btn btn-black btn-sm btn-block" onclick="loadCart()">Update Cart</button>
+							</div>
+							<div class="col-md-6">
+								<button class="btn btn-outline-black btn-sm btn-block" onclick="window.location.href='shop.html'">Continue Shopping</button>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-6 pl-5">
+						<div class="row justify-content-end">
+							<div class="col-md-7">
+								<div class="row">
+									<div class="col-md-12 text-right border-bottom mb-5">
+										<h3 class="text-black h4 text-uppercase">Cart Totals</h3>
+									</div>
+								</div>
+								<div class="row mb-3">
+									<div class="col-md-6">
+										<span class="text-black">Subtotal</span>
+									</div>
+									<div class="col-md-6 text-right">
+										<strong class="text-black subtotal-amount">$0.00</strong>
+									</div>
+								</div>
+								<div class="row mb-5">
+									<div class="col-md-6">
+										<span class="text-black">Total</span>
+									</div>
+									<div class="col-md-6 text-right">
+										<strong class="text-black total-amount">$0.00</strong>
+									</div>
+								</div>
+		
+								<div class="row">
+									<div class="col-md-12">
+										<button id="checkoutButton" class="btn btn-black btn-lg py-3 btn-block">Proceed To Checkout</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 		
 
 		<!-- Start Footer Section -->
@@ -309,7 +251,130 @@
 		</footer>
 		<!-- End Footer Section -->	
 
+		<script>
+			const urlParams = new URLSearchParams(window.location.search);
+			const userId = urlParams.get('userId'); // Assuming userId is passed as a parameter
 
+			document.getElementById('checkoutButton').onclick = function() {
+				window.location.href = `checkout.html?userId=${userId}`;
+			  };
+			// If userId exists, append it to the relevant links
+			if (userId) {
+				// Update the Home link
+				document.querySelector('a.nav-link[href="index.html"]').href = `index.html?userId=${userId}`;
+
+				// Update the Shop link
+				document.querySelector('a.nav-link[href="shop.html"]').href = `shop.html?userId=${userId}`;
+
+				// Update the Profile link
+				document.querySelector('a.nav-link[href="profile.html"]').href = `profile.html?userId=${userId}`;
+
+				// Update the Cart link
+				document.querySelector('a.nav-link[href="cart.html"]').href = `cart.html?userId=${userId}`;
+			}
+			
+		
+			// Function to fetch cart data
+			function loadCart() {
+				fetch(`public/get_cart.php?userId=${userId}`)
+					.then(response => response.json())
+					.then(cartData => {  // Changed 'data' to 'cartData' for clarity
+					
+						if (cartData.error) {
+							alert(cartData.error);
+							return;
+						}
+			
+						const products = cartData.products;
+						const cartItemsContainer = document.getElementById('cart-items');
+						cartItemsContainer.innerHTML = ''; // Clear existing items
+			
+						let subtotal = 0;
+			
+						products.forEach(product => {
+							fetch(`public/get_product.php?productId=${product.productId}`)
+								.then(response => response.json())
+								.then(productData => {  // Changed 'data' to 'productData' for clarity
+									const price = productData.price;
+									const total = price * product.quantity;
+									subtotal += total;
+			
+									const row = document.createElement('tr');
+									row.innerHTML = `
+										<td class="product-thumbnail">
+											<img src="${productData.images[0]}" alt="${productData.name}" class="img-fluid">
+										</td>
+										<td class="product-name">
+											<h2 class="h5 text-black">${productData.name}</h2>
+										</td>
+										<td>$${productData.price}</td>
+										<td>
+											<div class="input-group mb-3 d-flex align-items-center quantity-container">
+												<div class="input-group-prepend">
+													<button class="btn btn-outline-black decrease" type="button" onclick="updateQuantity('${product.productId}', ${product.quantity - 1})">&minus;</button>
+												</div>
+												<input type="text" class="form-control text-center quantity-amount" value="${product.quantity}" readonly>
+												<div class="input-group-append">
+													<button class="btn btn-outline-black increase" type="button" onclick="updateQuantity('${product.productId}', ${product.quantity + 1})">&plus;</button>
+												</div>
+											</div>
+										</td>
+										<td>$${total.toFixed(2)}</td>
+										<td><a href="javascript:void(0);" class="btn btn-black btn-sm" onclick="removeProduct('${product.productId}')">X</a></td>
+									`;
+									cartItemsContainer.appendChild(row);
+			
+									document.querySelector('.subtotal-amount').innerText = `$${subtotal.toFixed(2)}`;
+									document.querySelector('.total-amount').innerText = `$${subtotal.toFixed(2)}`;
+								});
+						});
+					})
+					.catch(error => console.error('Error loading cart:', error));
+			}
+			
+		
+			// Call loadCart() on page load
+			window.onload = loadCart;
+		
+			// Function to update quantity
+			function updateQuantity(productId, newQuantity) {
+				if (newQuantity < 1) return; // Minimum quantity is 1
+		
+				fetch('public/update_cart.php', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ userId, productId, quantity: newQuantity })
+				})
+				.then(response => response.json())
+				.then(data => {
+					if (data.success) {
+						loadCart(); // Reload the cart to reflect changes
+					} else {
+						alert("Failed to update quantity.");
+					}
+				})
+				.catch(error => console.error('Error updating quantity:', error));
+			}
+		
+			// Function to remove product from cart
+			function removeProduct(productId) {
+				fetch('public/remove_from_cart.php', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ userId, productId })
+				})
+				.then(response => response.json())
+				.then(data => {
+					if (data.success) {
+						loadCart(); // Reload the cart to reflect changes
+					} else {
+						alert("Failed to remove product.");
+					}
+				})
+				.catch(error => console.error('Error removing product:', error));
+			}
+		</script>
+		
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
 		<script src="js/custom.js"></script>

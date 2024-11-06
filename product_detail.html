@@ -22,6 +22,15 @@
 		<link href="css/tiny-slider.css" rel="stylesheet">
 		<link href="css/style.css" rel="stylesheet">
 		<title>KivRyelle Store</title>
+		<style>
+			#product-image {
+				max-width: 100%; /* Ensures the image doesn’t overflow */
+				max-height: 300px; /* Limits the height to 300px */
+				width: auto;
+				height: auto;
+				object-fit: contain; /* Ensures the image fits within specified dimensions */
+			}
+		</style>
 	</head>
 
 	<body>
@@ -45,7 +54,7 @@
 					</ul>
 
 					<ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-						<li><a class="nav-link" href="#"><img src="images/user.svg"></a></li>
+						<li><a class="nav-link" href="profile.html"><img src="images/user.svg"></a></li>
 						<li><a class="nav-link" href="cart.html"><img src="images/cart.svg"></a></li>
 					</ul>
 				</div>
@@ -55,24 +64,26 @@
 		<!-- End Header/Navigation -->
 
 		<!-- Start Hero Section -->
-			<div class="hero">
-				<div class="container">
-					<div class="row justify-content-between">
-						<div class="col-lg-5">
-							<div class="intro-excerpt">
-								<h1>Nama Produk</h1>
-								<p class="mb-4">deskripsi deskripsi deskripsi</p>
-								<p><a href="" class="btn btn-secondary me-2">Tambah ke keranjang</a></p>
-							</div>
+		<div class="hero">
+			<div class="container">
+				<div class="row justify-content-between">
+					<div class="col-lg-5">
+						<div class="intro-excerpt">
+							<h1 id="product-name"></h1>
+							<p class="mb-4" id="product-description"></p>
+							<p>
+								<a href="javascript:void(0);" class="btn btn-secondary me-2" onclick="addToCart()" id="add-to-cart">Tambah ke keranjang</a>
+							</p>
 						</div>
-						<div class="col-lg-7">
-							<div class="hero-img-wrap">
-								<img src="images/produk1.jpg" class="img-fluid">
-							</div>
+					</div>
+					<div class="col-lg-7">
+						<div class="hero-img-wrap">
+							<img id="product-image" class="img-fluid">
 						</div>
 					</div>
 				</div>
 			</div>
+		</div>
 		<!-- End Hero Section -->
 
 		
@@ -131,7 +142,7 @@
 
 					<div class="col-lg-5">
 						<div class="img-wrap">
-							<img src="images/produk1.jpg" alt="Image" class="img-fluid">
+							<img id="product-image2" alt="Image" class="img-fluid">
 						</div>
 					</div>
 
@@ -140,34 +151,27 @@
 		</div>
 		<!-- End Why Choose Us Section -->
 
-		<div class="container">
+		<!-- <div class="container">
 			<div class="row">
 				<div class="col-lg-7 mx-auto text-center">
 					<h2 class="section-title">Rating</h2>
 					
-					<div class="rating mb-3">
-														
+					<div class="rating mb-3" id="star-rating">
 						
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star checked"></span>
-						<span class="fa fa-star"></span>
-						<span class="fa fa-star"></span>
-
-						<p class="rating_sum">3/5 <span class="fa fa-star checked"></span></p>
+						<p class="rating_sum" id="product-rating"></p>
 					</div>
 				</div>
 			</div>
-		</div>
+		</div> -->
 
 		<!-- Start Comment Section -->
 		<div class="testimonial-section before-footer-section">
 			<div class="container">
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-lg-7 mx-auto text-center">
 						<h2 class="section-title">Komentar</h2>
 					</div>
-				</div>
+				</div> -->
 
 				<div class="row justify-content-center">
 					<div class="col-lg-12">
@@ -181,90 +185,13 @@
 							<div class="testimonial-slider">
 								
 								<!-- Komentar Item 1 -->
-								<div class="item">
-									<div class="row justify-content-center">
-										<div class="col-lg-8 mx-auto">
-
-											<div class="testimonial-block text-center">
-												<!-- Tanggal Komentar -->
-												<span class="comment-date">1 November 2024</span>
-												
-												<!-- Nama User -->
-												<h3 class="font-weight-bold mt-2">John Doe</h3>
-												
-												<!-- Rating -->
-												<div class="rating mb-3">
-													
-													<!-- Kalo gabisa pake bintang bintang pake angka gini aja -->
-													<!-- <p>3 <span class="fa fa-star checked"></span></p> -->
-
-													<span class="fa fa-star checked"></span>
-													<span class="fa fa-star checked"></span>
-													<span class="fa fa-star checked"></span>
-													<span class="fa fa-star"></span>
-													<span class="fa fa-star"></span>
-												</div>
-
-												<!-- Komentar -->
-												<blockquote class="mb-5">
-													<p>&ldquo;Produk ini sangat bagus dan sesuai dengan harapan saya. Pelayanan yang diberikan juga sangat memuaskan!&rdquo;</p>
-												</blockquote>
-											</div>
-
-										</div>
-									</div>
-								</div> 
+								<div id="ratings-container">
+									<h2>Comments and Ratings</h2>
+									<!-- Ratings will be loaded here by JavaScript -->
+								</div>
 								<!-- END item -->
 
-								<!-- Komentar Item 2 -->
-								<div class="item">
-									<div class="row justify-content-center">
-										<div class="col-lg-8 mx-auto">
-
-											<div class="testimonial-block text-center">
-												<span class="comment-date">28 Oktober 2024</span>
-												<h3 class="font-weight-bold mt-2">Jane Smith</h3>
-												<div class="rating mb-3">
-													<span class="fa fa-star checked"></span>
-													<span class="fa fa-star checked"></span>
-													<span class="fa fa-star checked"></span>
-													<span class="fa fa-star checked"></span>
-													<span class="fa fa-star"></span>
-												</div>
-												<blockquote class="mb-5">
-													<p>&ldquo;Produk ini memiliki kualitas yang sangat baik. Sangat direkomendasikan!&rdquo;</p>
-												</blockquote>
-											</div>
-
-										</div>
-									</div>
-								</div> 
-								<!-- END item -->
-
-								<!-- Komentar Item 3 -->
-								<div class="item">
-									<div class="row justify-content-center">
-										<div class="col-lg-8 mx-auto">
-
-											<div class="testimonial-block text-center">
-												<span class="comment-date">15 Oktober 2024</span>
-												<h3 class="font-weight-bold mt-2">Michael Lee</h3>
-												<div class="rating mb-3">
-													<span class="fa fa-star checked"></span>
-													<span class="fa fa-star checked"></span>
-													<span class="fa fa-star"></span>
-													<span class="fa fa-star"></span>
-													<span class="fa fa-star"></span>
-												</div>
-												<blockquote class="mb-5">
-													<p>&ldquo;Produk ini cukup baik, meskipun ada beberapa hal yang perlu diperbaiki.&rdquo;</p>
-												</blockquote>
-											</div>
-
-										</div>
-									</div>
-								</div> 
-								<!-- END item -->
+								
 
 							</div>
 
@@ -383,7 +310,120 @@
 		</footer>
 		<!-- End Footer Section -->	
 
+		<script>
+			// Retrieve the product ID from the URL
+			const urlParams = new URLSearchParams(window.location.search);
+			const productId = urlParams.get('id');
+			const userId = urlParams.get('userId'); // Assuming userId is passed as a parameter
 
+			// If userId exists, append it to the relevant links
+			if (userId) {
+				// Update the Home link
+				document.querySelector('a.nav-link[href="index.html"]').href = `index.html?userId=${userId}`;
+
+				// Update the Shop link
+				document.querySelector('a.nav-link[href="shop.html"]').href = `shop.html?userId=${userId}`;
+
+				// Update the Profile link
+				document.querySelector('a.nav-link[href="profile.html"]').href = `profile.html?userId=${userId}`;
+
+				// Update the Cart link
+				document.querySelector('a.nav-link[href="cart.html"]').href = `cart.html?userId=${userId}`;
+			}
+			
+			
+			// AJAX request to fetch product details and ratings
+			fetch(`public/product_detail.php?id=${productId}`)
+				.then(response => response.json())
+				.then(data => {
+					if (data.error) {
+						document.getElementById('ratings-container').innerHTML = `<p>${data.error}</p>`;
+						return;
+					}
+					// Access productId and userId from the data response
+					
+					
+			
+	
+					// Display product details
+					document.getElementById('product-name').innerText = data.name;
+					document.getElementById('product-image').src = data.images[0];
+					document.getElementById('product-image2').src = data.images[1];
+					document.getElementById('product-description').innerText = data.description;
+					
+					
+
+					// Display ratings
+					const ratingsContainer = document.getElementById('ratings-container');
+					data.ratings.forEach(rating => {
+						const item = document.createElement('div');
+						item.className = 'item';
+	
+						item.innerHTML = `
+							<div class="row justify-content-center">
+								<div class="col-lg-8 mx-auto">
+									<div class="testimonial-block text-center">
+										<span class="comment-date">${rating.reviewDate}</span>
+										<h3 class="font-weight-bold mt-2">${rating.name}</h3>
+										<div class="rating mb-3">
+											${generateStars(rating.rating)}
+										</div>
+										<blockquote class="mb-5">
+											<p>&ldquo;${rating.comment}&rdquo;</p>
+										</blockquote>
+									</div>
+								</div>
+							</div>
+						`;
+						ratingsContainer.appendChild(item);
+					});
+				})
+				.catch(error => {
+					document.getElementById('ratings-container').innerHTML = `<p>Error loading data.</p>`;
+					console.error('Error:', error);
+				});
+			
+				function addToCart() {
+					fetch('public/add_to_cart.php', {
+						method: 'POST',
+						headers: {
+							'Content-Type': 'application/json'
+						},
+						body: JSON.stringify({
+							userId: userId, // userId from the response
+							productId: productId, // productId from the response
+							quantity: 1
+						})
+					})
+					.then(response => response.json())
+					.then(data => {
+						if (data.success) {
+							alert("Product added to cart successfully!");
+						} else {
+							alert("Error adding product to cart.");
+						}
+					})
+					.catch(error => console.error('Error:', error));
+				}
+	
+			// Function to generate star rating HTML
+			function generateStars(rating) {
+				let starsHTML = '';
+				for (let i = 0; i < 5; i++) {
+					starsHTML += i < rating ? '<span class="fa fa-star checked"></span>' : '<span class="fa fa-star"></span>';
+				}
+				return starsHTML;
+			}
+		</script>
+	
+		<style>
+			.fa-star {
+				color: #FFD700; /* Gold color */
+			}
+			.checked {
+				color: #FFD700;
+			}
+		</style>
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
 		<script src="js/custom.js"></script>

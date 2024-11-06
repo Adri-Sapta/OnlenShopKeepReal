@@ -115,20 +115,19 @@
 									</div>
 								</div>
 							</div>
-							<h5 class="text-center h5 mb-0">Nama Customer</h5>
+							<h5 class="text-center h5 mb-0" id="username">Nama Customer</h5>
 							<br>
 							<div class="profile-info">
 								<h5 class="mb-20 h5 text-blue">Contact Information</h5>
 								<ul>
 									<li>
 										<span>Email Address:</span>
-										keepreal@test.com
+										<span id="email">keepreal@test.com</span> <!-- Dynamic part here -->
 									</li>
 									<li>
 										<span>Phone Number:</span>
-										619-229-0054
+										<span id="phone">619-229-0054</span> <!-- Dynamic part here -->
 									</li>
-									
 								</ul>
 							</div>
 							
@@ -154,73 +153,9 @@
 										<!-- riwayat Tab start -->
 										<div class="tab-pane fade show active" id="riwayat" role="tabpanel">
 											<div class="pd-20">
-										
 												<!-- Riwayat Produk -->
 												<div class="riwayat-list mt-3">
-													<!-- Item Produk Riwayat -->
-													<div class="card mb-3">
-														<div class="card-body">
-															<div class="row align-items-center">
-																<!-- Foto Produk -->
-																<div class="col-md-2">
-																	<img src="images/produk1png.png" alt="Foto Produk" class="img-fluid">
-																</div>
-										
-																<!-- Detail Produk -->
-																<div class="col-md-10">
-																	<h6>(Nama Produk)</h6>
-																	<div class="row">
-																		<div class="col-md-4">
-																			<p><strong>Qty:</strong> 2</p>
-																			<p><strong>Harga:</strong> $150.00</p>
-																		</div>
-																		<div class="col-md-4">
-																			<p><strong>Tanggal Pemesanan:</strong><br> 1 November 2024</p>
-																			<p><strong>Tanggal Diterima:</strong><br> 5 November 2024</p>
-																		</div>
-																		<div class="col-md-4">
-																			<p><strong>Alamat:</strong> Jl. Contoh Alamat, Kota, Provinsi</p>
-																			<p><strong>Pembayaran:</strong> Transfer Bank</p>
-																			<p><strong>Waktu Pembayaran:</strong><br> 1 November 2024, 14:00</p>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="card mb-3">
-														<div class="card-body">
-															<div class="row align-items-center">
-																<!-- Foto Produk -->
-																<div class="col-md-2">
-																	<img src="images/produk1png.png" alt="Foto Produk" class="img-fluid">
-																</div>
-										
-																<!-- Detail Produk -->
-																<div class="col-md-10">
-																	<h6>(Nama Produk)</h6>
-																	<div class="row">
-																		<div class="col-md-4">
-																			<p><strong>Qty:</strong> 2</p>
-																			<p><strong>Harga:</strong> $150.00</p>
-																		</div>
-																		<div class="col-md-4">
-																			<p><strong>Tanggal Pemesanan:</strong><br> 1 November 2024</p>
-																			<p><strong>Tanggal Diterima:</strong><br> 5 November 2024</p>
-																		</div>
-																		<div class="col-md-4">
-																			<p><strong>Alamat:</strong> Jl. Contoh Alamat, Kota, Provinsi</p>
-																			<p><strong>Pembayaran:</strong> Transfer Bank</p>
-																			<p><strong>Waktu Pembayaran:</strong><br> 1 November 2024, 14:00</p>
-																		</div>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-										
-													<!-- Tambahkan item produk riwayat lainnya sesuai kebutuhan -->
-										
+													<!-- The purchase history items will be appended here by JavaScript -->
 												</div>
 											</div>
 										</div>
@@ -240,7 +175,7 @@
 										
 												<!-- Detail Pesanan -->
 												<div class="order-details">
-													<p><strong>Total Harga:</strong> <span id="total-amount"></span></p>
+													<p><strong>Total Item:</strong> <span id="total-amount"></span></p>
 													<p><strong>Status Pesanan:</strong> <span id="order-status"></span></p>
 													<p><strong>Tanggal Pemesanan:</strong> <span id="order-date"></span></p>
 													<p><strong>Tanggal Diterima:</strong> <span id="delivery-date"></span></p>
@@ -259,7 +194,7 @@
 											</div>
 										</div>
 										
-										<script>
+										<!-- <script>
 											// Contoh data pesanan yang diterima dari backend
 											const orderData = {
 												products: [
@@ -354,7 +289,7 @@
 										
 											// Panggil fungsi untuk menampilkan detail pesanan
 											displayOrderDetails(orderData);
-										</script>
+										</script> -->
 										
 
 										<!-- Setting Tab start -->
@@ -374,7 +309,218 @@
 				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
 			</div>
 	</div>
+	<script>
+		 // Retrieve the userId from the current page's URL
+		 const urlParams = new URLSearchParams(window.location.search);
+		 const userId = urlParams.get('userId'); // Assuming userId is passed as a parameter
+	 
+		 // If userId exists, append it to the relevant links
+		 if (userId) {
+			 // Update the Home link
+			 document.querySelector('a.nav-link[href="index.html"]').href = `index.html?userId=${userId}`;
+	 
+			 // Update the Shop link
+			 document.querySelector('a.nav-link[href="shop.html"]').href = `shop.html?userId=${userId}`;
+	 
+			 // Update the Profile link
+			 document.querySelector('a.nav-link[href="profile.html"]').href = `profile.html?userId=${userId}`;
+	 
+			 // Update the Cart link
+			 document.querySelector('a.nav-link[href="cart.html"]').href = `cart.html?userId=${userId}`;
+		 }
+		// Function to fetch user data based on userId
+function fetchUserData(userId) {
+    // Make a GET request to the PHP file
+    fetch(`public/get_user.php?userId=${userId}`)
+        .then(response => response.json()) // Parse JSON response
+        .then(data => {
+            if (data.error) {
+                // Handle error if user is not found or another issue occurs
+                console.error(data.error);
+                alert(data.error);
+            } else {
+                // Display or use the user data
+                console.log("User Data:", data);
+
+                
+                document.getElementById("username").innerText = data.username;
+                document.getElementById("email").innerText = data.email;
+                document.getElementById("phone").innerText = data.phone;
+                
+            }
+        })
+        .catch(error => {
+            console.error("An error occurred while fetching user data:", error);
+            alert("An error occurred. Please try again.");
+        });
+}
+
+
+fetchUserData(userId);
 	
+		function fetchPurchaseHistory(userId) {
+			fetch(`public/get_PurchaseHistory.php?userId=${userId}`)
+				.then(response => response.json())
+				.then(data => {
+					if (data.error) {
+						console.error(data.error);
+						alert(data.error);
+						return;
+					}
+		
+					const historyContainer = document.querySelector("#riwayat .riwayat-list");
+					historyContainer.innerHTML = ''; // Clear existing content
+		
+					data.forEach(purchase => {
+						purchase.products.forEach(product => {
+							// Create the product history card
+							const card = document.createElement("div");
+							card.className = "card mb-3";
+							card.innerHTML = `
+								<div class="card-body">
+									<div class="row align-items-center">
+										<!-- Foto Produk -->
+										<div class="col-md-2">
+											<img src="${product.images[0]}" alt="Foto Produk" class="img-fluid">
+										</div>
+		
+										<!-- Detail Produk -->
+										<div class="col-md-10">
+											<h6>Product ID: ${product.productId}</h6>
+											<div class="row">
+												<div class="col-md-4">
+													<p><strong>Qty:</strong> ${product.quantity}</p>
+													<p><strong>Harga:</strong> $${product.price.toFixed(2)}</p>
+												</div>
+												<div class="col-md-4">
+													<p><strong>Tanggal Pemesanan:</strong><br> ${purchase.orderDate}</p>
+													<p><strong>Tanggal Diterima:</strong><br> ${purchase.deliveryDate || 'Not Available'}</p>
+												</div>
+												<div class="col-md-4">
+													<p><strong>Alamat:</strong> ${purchase.shippingAddress.street}, ${purchase.shippingAddress.city}, ${purchase.shippingAddress.state}</p>
+													<p><strong>Pembayaran:</strong> ${purchase.payment.method}</p>
+													<p><strong>Waktu Pembayaran:</strong><br> ${purchase.payment.paymentDate}</p>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							`;
+							// Append the card to the history container
+							historyContainer.appendChild(card);
+						});
+					});
+				})
+				.catch(error => {
+					console.error("An error occurred while fetching purchase history:", error);
+					alert("An error occurred. Please try again.");
+				});
+		}
+		
+		// Call the function with a specific userId
+		fetchPurchaseHistory(userId); // Replace "yourUserIdHere" with the actual user ID
+		
+	
+		function fetchTransactionDetails(userId) {
+			fetch(`public/get_Transactions.php?userId=${userId}`)
+				.then(response => response.json())
+				.then(data => {
+					if (data.error) {
+						console.error(data.error);
+						alert(data.error);
+						return;
+					}
+		
+					// Assume we are displaying the first transaction in the list for this example
+					const order = data[0];
+					displayOrderDetails(order);
+				})
+				.catch(error => console.error("Error fetching transaction data:", error));
+		}
+		
+		// Display transaction details in HTML
+		function displayOrderDetails(order) {
+			// Display products in order
+			const orderProductsContainer = document.getElementById("order-products");
+			orderProductsContainer.innerHTML = "";
+			order.products.forEach(product => {
+				orderProductsContainer.innerHTML += `
+					<div class="card mb-2">
+						<div class="card-body">
+							<div class="row align-items-center">
+								<div class="col-md-2">
+									<img src="${product.images[0]}" alt="${product.name}" class="img-fluid">
+								</div>
+								<div class="col-md-10">
+									<h6>${product.name || "Product Name"}</h6>
+									<p><strong>Qty:</strong> ${product.quantity}</p>
+									<p><strong>Price:</strong> $${product.price.toFixed(2)}</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				`;
+			});
+		
+			// Display other order details
+			document.getElementById("total-amount").textContent = `${order.totalAmount}`;
+			document.getElementById("order-status").textContent = formatOrderStatus(order.orderStatus);
+			document.getElementById("order-date").textContent = formatDate(order.orderDate);
+			document.getElementById("delivery-date").textContent = formatDate(order.deliveryDate);
+			document.getElementById("shipping-address").textContent = `${order.shippingAddress.street}, ${order.shippingAddress.city}, ${order.shippingAddress.state}, ${order.shippingAddress.postalCode}`;
+			document.getElementById("payment-method").textContent = order.payment.paymentMethod;
+			document.getElementById("payment-date").textContent = formatDate(order.payment.paymentDate);
+			document.getElementById("payment-amount").textContent = `$${parseFloat(order.payment.amount).toFixed(2)}`;
+			
+			// Set the onclick function with the correct order ID
+			document.getElementById("complete-order-button").onclick = function () {
+				markOrderComplete(order._id);
+			};
+		
+			// Show "Complete Order" button if status is "delivered"
+			if (order.orderStatus === "delivered") {
+				document.getElementById("complete-order-button").style.display = "block";
+			}
+		}
+		
+		// Helper function to format order status
+		function formatOrderStatus(status) {
+			return status.charAt(0).toUpperCase() + status.slice(1);
+		}
+		
+		// Helper function to format dates
+		function formatDate(dateString) {
+			const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+			return new Date(dateString).toLocaleDateString("id-ID", options);
+		}
+		
+		// Function to mark order as complete
+		function markOrderComplete(orderId) {
+			alert("Pesanan selesai. Terima kasih!");
+			fetch("public/update_order_status.php", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({ orderId: orderId, newStatus: "success" }),
+			})
+				.then(response => response.json())
+				.then(data => {
+					if (data.success) {
+						alert("Pesanan selesai dan dipindahkan ke riwayat.");
+						document.getElementById("order-status").textContent = "completed";
+						document.getElementById("complete-order-button").style.display = "none"; // Hide the button
+					} else {
+						alert("Failed to complete order: " + (data.error || "Unknown error"));
+					}
+				})
+				.catch(error => console.error("Error completing order:", error));
+			
+		}
+		
+		// Initialize with a specific user ID
+		fetchTransactionDetails(userId); // Replace with the actual user ID		
+	</script>
 	<!-- js -->
 	<script src="vendors/scripts/core.js"></script>
 	<script src="vendors/scripts/script.min.js"></script>

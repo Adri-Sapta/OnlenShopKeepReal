@@ -7,65 +7,120 @@
     <title>Document</title>
 </head>
 <body>
-    <br>
-<br>
+    <br><br>
     <div class="cont">
         <div class="form sign-in">
             <h2>Welcome</h2>
             <label>
                 <span>Email</span>
-                <input type="email" />
+                <input type="email" id="login-email" required />
             </label>
             <label>
                 <span>Password</span>
-                <input type="password" />
+                <input type="password" id="login-password" required />
             </label>
             <p class="forgot-pass">Forgot password?</p>
-            <button type="button" class="submit">Sign In</button>
-         
+            <button type="button" class="submit" onclick="login()">Sign In</button>
         </div>
+
         <div class="sub-cont">
             <div class="img">
                 <div class="img__text m--up">
-                 
-                    <h3>Don't have an account? Please Sign up!<h3>
+                    <h3>Don't have an account? Please Sign up!</h3>
                 </div>
                 <div class="img__text m--in">
-                
-                    <h3>If you already has an account, just sign in.<h3>
+                    <h3>If you already have an account, just sign in.</h3>
                 </div>
                 <div class="img__btn">
                     <span class="m--up">Sign Up</span>
                     <span class="m--in">Sign In</span>
                 </div>
             </div>
+
             <div class="form sign-up">
                 <h2>Create your Account</h2>
                 <label>
                     <span>Username</span>
-                    <input type="text" />
+                    <input type="text" id="signup-username" required />
                 </label>
                 <label>
                     <span>Email</span>
-                    <input type="email" />
+                    <input type="email" id="signup-email" required />
                 </label>
                 <label>
                     <span>Phone</span>
-                    <input type="text" />
+                    <input type="text" id="signup-phone" required />
                 </label>
                 <label>
                     <span>Password</span>
-                    <input type="password" />
+                    <input type="password" id="signup-password" required />
                 </label>
-                <button type="button" class="submit">Sign Up</button>
-                
+                <button type="button" class="submit" onclick="signUp()">Sign Up</button>
             </div>
         </div>
     </div>
+
     <script>
         document.querySelector('.img__btn').addEventListener('click', function() {
             document.querySelector('.cont').classList.toggle('s--signup');
         });
+
+        // Login function
+function login() {
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+   
+    
+    fetch('public/login.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            // Redirect to index.html with userId in the query string
+            window.location.href = `index.html?userId=${data.user.id}`;
+        } else {
+            alert(data.error);
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
+// Sign Up function
+function signUp() {
+    const username = document.getElementById('signup-username').value;
+    const email = document.getElementById('signup-email').value;
+    const phone = document.getElementById('signup-phone').value;
+    const password = document.getElementById('signup-password').value;
+
+    fetch('public/create_account.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, email, phone, password })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            // Clear the sign-up form fields
+            document.getElementById('signup-username').value = '';
+            document.getElementById('signup-email').value = '';
+            document.getElementById('signup-phone').value = '';
+            document.getElementById('signup-password').value = '';
+            
+            // Switch to sign-in form
+            document.querySelector('.cont').classList.toggle('s--signup');
+        } else {
+            alert(data.error);
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
     </script>
 </body>
+
 </html>
